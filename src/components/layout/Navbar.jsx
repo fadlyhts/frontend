@@ -49,9 +49,9 @@ function Navbar({ onMenuToggle, useGreenTheme }) {
       <div className="container mx-auto px-4 py-2">
         <div className="flex items-center">
           {/* Logo */}
-          <div className="flex items-center space-x-2 w-1/4">
-            <img src="/logo_jakartaparkfinder.png" alt="Jakarta Park Finder" className="h-16 md:h-20 lg:h-24" />
-            <span className={`text-lg md:text-xl lg:text-2xl font-semibold ${scrolled ? 'text-white' : 'text-white'}`}>
+          <div className="flex items-center space-x-2 flex-shrink-0">
+            <img src="/logo_jakartaparkfinder.png" alt="Jakarta Park Finder" className="h-12 md:h-16 lg:h-20" />
+            <span className={`text-sm md:text-xl lg:text-2xl font-semibold ${scrolled ? 'text-white' : 'text-white'} whitespace-nowrap`}>
               Jakarta Park Finder
             </span>
           </div>
@@ -231,7 +231,7 @@ function Navbar({ onMenuToggle, useGreenTheme }) {
                 ) : (
                   <Link
                     to="/login"
-                    className="w-full px-4 py-2 border border-[#2D5A27] text-[#2D5A27] rounded-full hover:bg-[#2D5A27]/10 text-center font-semibold"
+                    className="block w-full px-4 py-2 border border-[#2D5A27] text-[#2D5A27] rounded-full hover:bg-[#2D5A27]/10 text-center font-semibold"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Sign In
