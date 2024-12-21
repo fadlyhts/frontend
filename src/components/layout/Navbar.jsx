@@ -79,9 +79,9 @@ function Navbar({ onMenuToggle, useGreenTheme }) {
                 <Link
                   key={item}
                   to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-                  className={`relative group py-2 ${scrolled ? 'text-white' : 'text-white'}`}
+                  className={`relative group py-2 ${scrolled ? 'text-white' : 'text-white'} font-semibold`}
                 >
-                  <span className="relative z-10 tracking-wide">{item}</span>
+                  <span className="relative z-10 tracking-wide font-semibold">{item}</span>
                   <div className="absolute bottom-0 left-0 w-full h-[1px] transform origin-left scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100 bg-white"></div>
                 </Link>
               ))}
@@ -98,7 +98,7 @@ function Navbar({ onMenuToggle, useGreenTheme }) {
                 placeholder="Search Parks"
                 className={`px-4 py-2 rounded-full ${
                   scrolled ? 'bg-white/30' : 'bg-white/30'
-                } text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white`}
+                } text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white font-medium`}
               />
             </form>
             {user ? (
@@ -131,7 +131,7 @@ function Navbar({ onMenuToggle, useGreenTheme }) {
                     to="/profile"
                     className={`flex items-center space-x-2 ${scrolled ? 'text-white' : 'text-white'}`}
                   >
-                    <span className="text-sm font-medium">{user.name}</span>
+                    <span className="text-sm font-semibold">{user.name}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                     </svg>
@@ -140,7 +140,7 @@ function Navbar({ onMenuToggle, useGreenTheme }) {
                     onClick={handleLogout}
                     className={`px-4 py-2 rounded-full border ${
                       scrolled ? 'border-white text-white hover:bg-white/20' : 'border-white text-white hover:bg-white/20'
-                    }`}
+                    } font-semibold`}
                   >
                     Logout
                   </button>
@@ -151,7 +151,7 @@ function Navbar({ onMenuToggle, useGreenTheme }) {
                 to="/login"
                 className={`px-4 py-2 rounded-full border ${
                   scrolled ? 'border-white text-white hover:bg-white/20' : 'border-white text-white hover:bg-white/20'
-                }`}
+                } font-semibold`}
               >
                 Sign In
               </Link>
@@ -169,7 +169,7 @@ function Navbar({ onMenuToggle, useGreenTheme }) {
                 <Link
                   key={item}
                   to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-                  className="block py-2 px-4 text-[#2D5A27] hover:bg-gray-50 text-center"
+                  className="block py-2 px-4 text-[#2D5A27] hover:bg-gray-50 text-center font-semibold"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item}
@@ -182,7 +182,7 @@ function Navbar({ onMenuToggle, useGreenTheme }) {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search Parks"
-                    className="w-full px-4 py-2 rounded-full bg-[#2D5A27]/10 text-[#2D5A27] focus:outline-none"
+                    className="w-full px-4 py-2 rounded-full bg-[#2D5A27]/10 text-[#2D5A27] focus:outline-none font-medium"
                   />
                 </form>
               </div>
@@ -191,7 +191,7 @@ function Navbar({ onMenuToggle, useGreenTheme }) {
                   <div className="flex flex-col space-y-3">
                     <Link
                       to="/profile"
-                      className="flex items-center justify-center space-x-2 text-[#2D5A27] hover:bg-[#2D5A27]/10 py-2 rounded-lg"
+                      className="flex items-center justify-center space-x-2 text-[#2D5A27] hover:bg-[#2D5A27]/10 py-2 rounded-lg font-semibold"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -201,7 +201,7 @@ function Navbar({ onMenuToggle, useGreenTheme }) {
                     </Link>
                     <Link
                       to="/notifications"
-                      className="flex items-center justify-center space-x-2 text-[#2D5A27] hover:bg-[#2D5A27]/10 py-2 rounded-lg"
+                      className="flex items-center justify-center space-x-2 text-[#2D5A27] hover:bg-[#2D5A27]/10 py-2 rounded-lg font-semibold"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       <svg
@@ -223,7 +223,7 @@ function Navbar({ onMenuToggle, useGreenTheme }) {
                     </Link>
                     <button
                       onClick={handleLogout}
-                      className="w-full px-4 py-2 border border-[#2D5A27] text-[#2D5A27] rounded-full hover:bg-[#2D5A27]/10"
+                      className="w-full px-4 py-2 border border-[#2D5A27] text-[#2D5A27] rounded-full hover:bg-[#2D5A27]/10 font-semibold"
                     >
                       Logout
                     </button>
@@ -231,7 +231,7 @@ function Navbar({ onMenuToggle, useGreenTheme }) {
                 ) : (
                   <Link
                     to="/login"
-                    className="w-full px-4 py-2 border border-[#2D5A27] text-[#2D5A27] rounded-full hover:bg-[#2D5A27]/10 text-center"
+                    className="w-full px-4 py-2 border border-[#2D5A27] text-[#2D5A27] rounded-full hover:bg-[#2D5A27]/10 text-center font-semibold"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Sign In

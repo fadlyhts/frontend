@@ -43,13 +43,13 @@ function Hero() {
         <div className="flex justify-center space-x-6 mb-12">
           <button
             onClick={scrollToMainContent}
-            className="bg-white text-green-800 px-8 py-3 rounded-full hover:bg-green-50 transition"
+            className="bg-white text-green-800 px-8 py-3 rounded-full hover:bg-green-50 transition font-semibold"
           >
             Explore Map
           </button>
           <button 
             onClick={() => navigate('/about')}
-            className="border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white/20 transition"
+            className="border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white/20 transition font-semibold"
           >
             Learn More
           </button>
@@ -61,7 +61,7 @@ function Hero() {
           </p>
           <button
             onClick={handleReportClick}
-            className="bg-green-600 text-white px-8 py-3 rounded-full hover:bg-green-700 transition flex items-center justify-center mx-auto shadow-lg"
+            className="bg-green-600 text-white px-8 py-3 rounded-full hover:bg-green-700 transition flex items-center justify-center mx-auto shadow-lg font-semibold"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
