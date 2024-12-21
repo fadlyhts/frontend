@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "format": "prettier --write ./src",
     "heroku-postbuild": "npm run build",
-    "start": "bin/start-nginx"
+    "start": "serve -s dist"
   },
   "dependencies": {
     "axios": "^1.7.9",
@@ -21,7 +21,8 @@
     "react-dom": "^18.3.1",
     "react-leaflet": "^4.2.1",
     "react-router-dom": "^7.0.2",
-    "react-toastify": "^10.0.6"
+    "react-toastify": "^10.0.6",
+    "serve": "^14.2.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
