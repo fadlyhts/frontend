@@ -56,8 +56,8 @@ function Register({ onSuccess }) {
   };
 
   return (
-    <>
-      <h3 className="text-2xl font-bold text-green-800 mb-6">Create an Account</h3>
+    <div>
+      <h3 className="text-2xl font-bold text-green-800 mb-6">Register</h3>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         {error && (
@@ -122,7 +122,7 @@ function Register({ onSuccess }) {
 
         <button
           type="submit"
-          className={`w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors ${
+          className={`w-full bg-green-600 text-white py-3 px-4 rounded-lg hover:bg-green-700 transition-colors font-bold ${
             loading ? 'opacity-75 cursor-not-allowed' : ''
           }`}
           disabled={loading}
@@ -140,7 +140,7 @@ function Register({ onSuccess }) {
               Creating Account...
             </div>
           ) : (
-            'Create Account'
+            'Sign Up'
           )}
         </button>
       </form>
@@ -152,10 +152,10 @@ function Register({ onSuccess }) {
           onClick={() => onSuccess('login')}
           className="text-green-600 hover:text-green-700 font-semibold"
         >
-          Sign in here
+          Sign In
         </button>
       </p>
-    </>
+    </div>
   );
 }
 

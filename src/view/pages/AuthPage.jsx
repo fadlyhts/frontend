@@ -53,7 +53,7 @@ const AuthPage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-[calc(100vh-200px)] py-12 px-4 sm:px-6 lg:px-8">
+    <div className="flex items-center justify-center min-h-screen pt-24 pb-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8 bg-white p-8 rounded-lg shadow-lg border border-green-100">
         {/* Tabs */}
         <div className="flex justify-center space-x-4 border-b">
