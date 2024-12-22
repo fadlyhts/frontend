@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import parkService from '../../services/parkService';
 
 const ParkManagement = () => {
   const [parks, setParks] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [showCreateModal, setShowCreateModal] = useState(false);
@@ -25,7 +25,7 @@ const ParkManagement = () => {
 
   const fetchParks = async () => {
     try {
-      setLoading(true);
+      setIsLoading(true);
       const response = await parkService.getAllParks();
       setParks(response.data);
       setError(null);
@@ -33,13 +33,13 @@ const ParkManagement = () => {
       setError('Failed to fetch parks');
       console.error(err);
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   };
 
   const handleSearch = async () => {
     try {
-      setLoading(true);
+      setIsLoading(true);
       const response = await parkService.searchParks(searchQuery);
       setParks(response.data);
       setError(null);
@@ -47,7 +47,7 @@ const ParkManagement = () => {
       setError('Failed to search parks');
       console.error(err);
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   };
 
@@ -69,7 +69,7 @@ const ParkManagement = () => {
   const handleCreatePark = async (e) => {
     e.preventDefault();
     try {
-      setLoading(true);
+      setIsLoading(true);
       const dataToSubmit = {
         ...formData,
         facilities: formData.facilities
@@ -93,14 +93,14 @@ const ParkManagement = () => {
       setError('Failed to create park');
       console.error(err);
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   };
 
   const handleUpdatePark = async (e) => {
     e.preventDefault();
     try {
-      setLoading(true);
+      setIsLoading(true);
       const dataToSubmit = {
         ...formData,
         facilities: formData.facilities
@@ -116,21 +116,21 @@ const ParkManagement = () => {
       setError('Failed to update park');
       console.error(err);
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   };
 
   const handleDeletePark = async (parkId) => {
     if (window.confirm('Are you sure you want to delete this park?')) {
       try {
-        setLoading(true);
+        setIsLoading(true);
         await parkService.deletePark(parkId);
         fetchParks();
       } catch (err) {
         setError('Failed to delete park');
         console.error(err);
       } finally {
-        setLoading(false);
+        setIsLoading(false);
       }
     }
   };
@@ -196,6 +196,8 @@ const ParkManagement = () => {
           <span>{error}</span>
         </div>
       )}
+
+      {isLoading && <div>Loading...</div>}
 
       <div className="overflow-x-auto bg-white rounded-lg shadow">
         <table className="min-w-full">

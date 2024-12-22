@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Navigate, useNavigate, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Login from '../../components/auth/Login';
 import Register from '../../components/auth/Register';
 import { useAuth } from '../../context/AuthContext';
@@ -46,10 +46,6 @@ const AuthPage = () => {
     } else {
       navigate('/');
     }
-  };
-
-  const handleRegisterSuccess = () => {
-    setSelectedTab('login');
   };
 
   return (

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import repairedParkService from '../../services/repairedParkService';
 import damagedParkService from '../../services/damagedParkService';
 

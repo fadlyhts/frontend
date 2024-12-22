@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Card = ({ title, value, color }) => {
   const displayValue = value === null || value === undefined ? '-' : 
     typeof value === 'number' ? value.toLocaleString() : value;

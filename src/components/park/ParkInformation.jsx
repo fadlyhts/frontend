@@ -1,18 +1,5 @@
 import ParkList from './ParkList';
 
-function ParkCard({ park }) {
-  return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
-      <img src={park.image} alt={park.name} className="w-full h-48 object-cover" />
-      <div className="p-4">
-        <h3 className="text-xl font-semibold">{park.name}</h3>
-        <p className="text-gray-600">{park.location}</p>
-        <p className="mt-2">{park.description}</p>
-      </div>
-    </div>
-  );
-}
-
 function ParkInformation() {
   return (
     <div className="space-y-8">

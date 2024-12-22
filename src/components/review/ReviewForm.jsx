@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { toast } from 'react-toastify';
 import reviewService from '../../services/reviewService';
 import { useAuth } from '../../context/AuthContext';
@@ -8,7 +8,6 @@ export default function ReviewForm({ parkId, onReviewAdded }) {
   const [comment, setComment] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const { user } = useAuth();
-  const modalRef = useRef(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -107,7 +107,7 @@ const ParkList = () => {
               d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
             />
           </svg>
-          <span>{searchQuery ? `No parks found for "${searchQuery}"` : 'No parks found'}</span>
+          <p>No parks match &quot;{searchQuery}&quot;</p>
         </div>
       </div>
     );
@@ -118,7 +118,7 @@ const ParkList = () => {
       {searchQuery && (
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-gray-900">
-            Search results for "{searchQuery}"
+            Search results for &quot;{searchQuery}&quot;
           </h2>
           <p className="text-gray-600 mt-2">Found {parks.length} parks</p>
         </div>

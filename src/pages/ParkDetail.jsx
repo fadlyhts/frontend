@@ -5,9 +5,9 @@ import parkService from '../services/parkService';
 const ParkDetail = () => {
   const { id } = useParams();
   const [park, setPark] = useState(null);
-  const [imageError, setImageError] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
     const fetchPark = async () => {
@@ -31,7 +31,7 @@ const ParkDetail = () => {
   return (
     <div>
       <div>
-        {park.imageUrl ? (
+        {park.imageUrl && !imageError ? (
           <img
             src={park.imageUrl}
             alt={park.name}

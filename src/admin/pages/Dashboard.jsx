@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Card from '../components/Card';
 import parkService from '../../services/parkService';
 import damagedParkService from '../../services/damagedParkService';
@@ -15,14 +15,10 @@ const Dashboard = () => {
     repairs: 0
   });
 
-  useEffect(() => {
-    fetchDashboardData();
-  }, []);
-
   const [retryCount, setRetryCount] = useState(0);
   const maxRetries = 3;
 
-  const fetchDashboardData = async (retry = 0) => {
+  const fetchDashboardData = useCallback(async (retry = 0) => {
     try {
       setLoading(true);
       setError(null);
@@ -81,7 +77,11 @@ const Dashboard = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, []); // Empty dependency array since it doesn't depend on any props or state
+
+  useEffect(() => {
+    fetchDashboardData();
+  }, [fetchDashboardData]); // Add fetchDashboardData to dependency array
 
   const handleRetry = () => {
     setRetryCount(0);

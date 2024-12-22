@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import AuthModal from '../auth/Modal';
 
-function Navbar({ onMenuToggle, useGreenTheme }) {
+function Navbar({ onMenuToggle }) {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');

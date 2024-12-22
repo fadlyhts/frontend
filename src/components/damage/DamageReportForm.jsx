@@ -16,6 +16,11 @@ function DamageReportForm() {
   const { user } = useAuth();
 
   useEffect(() => {
+    if (!user) {
+      navigate('/login');
+      return;
+    }
+
     const fetchParks = async () => {
       try {
         const response = await parkService.getAllParks();
@@ -29,7 +34,7 @@ function DamageReportForm() {
     };
 
     fetchParks();
-  }, []);
+  }, [user, navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
